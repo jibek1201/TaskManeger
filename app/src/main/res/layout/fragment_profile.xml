@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.profile.ProfileFragment">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/name"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navigation_profile" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/navigation_profile"
@@ -20,20 +32,11 @@
             android:id="@+id/img_profile"
             android:layout_width="240dp"
             android:layout_height="240dp"
-            android:src="@drawable/bird"/>
+            android:src="@drawable/user_profile"/>
 
     </androidx.cardview.widget.CardView>
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/name"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/navigation_profile" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
