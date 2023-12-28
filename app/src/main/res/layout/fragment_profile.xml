@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
+    android:gravity="center"
     tools:context=".ui.profile.ProfileFragment">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile" />
+
     <EditText
+        android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -15,28 +26,12 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/navigation_profile" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/navigation_profile"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        app:cardCornerRadius="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <Button
+        android:id="@+id/btn_save"
+        android:text="SAVE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:id="@+id/img_profile"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:src="@drawable/user_profile"/>
-
-    </androidx.cardview.widget.CardView>
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
