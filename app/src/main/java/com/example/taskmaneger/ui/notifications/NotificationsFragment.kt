@@ -8,11 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.taskmaneger.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
-
     private var _binding: FragmentNotificationsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
