@@ -49,9 +49,7 @@ class ProfileFragment : Fragment() {
             pref.saveText(binding.userName.text.toString())
         }
         binding.userName.setText(pref.showText())
-
         binding.imgProfile.loadImage(pref.showImage())
-
         binding.imgProfile.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"

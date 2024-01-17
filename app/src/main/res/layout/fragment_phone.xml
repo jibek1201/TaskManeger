@@ -8,9 +8,9 @@
     android:padding="16dp"
     android:gravity="center"
     tools:context=".ui.profile.ProfileFragment">
-    
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_name"
+        android:id="@+id/til_phone"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,25 +19,17 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:hint="search"
-            android:id="@+id/user_name"
+            android:id="@+id/user_phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:text="+996" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgProfile"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_profile" />
-
-
     <Button
-        android:id="@+id/btn_save"
-        android:text="SAVE"
+        android:id="@+id/btn_send"
+        android:text="SEND CODE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

@@ -8,4 +8,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile">Profile</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="do_you_want_to_delete">Do you want to delete %1$s?</string>
+    <string name="delete_task">Delete task</string>
+    <string name="update">Update</string>
 </resources>

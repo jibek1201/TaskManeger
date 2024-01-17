@@ -15,7 +15,7 @@ import com.example.taskmaneger.model.Task
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private val adapter = TaskAdapter(this::onLongClick)
+    private val adapter = TaskAdapter(this::onLongClick, this::onUpdateClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,19 +38,34 @@ class HomeFragment : Fragment() {
 
     private fun onLongClick(position:Task):Boolean{
         val alertDialogBuilder = AlertDialog.Builder(requireContext())
-            .setTitle("Delete task")
-            .setMessage("Do you want to delete ${position.title + " " + position.desc}?")
-            .setPositiveButton("Yes"){ _, _ ->
+            .setTitle(getString(R.string.delete_task))
+            .setMessage(
+                getString(
+                    R.string.do_you_want_to_delete,
+                    position.title + " " + position.desc
+                ))
+            .setPositiveButton(getString(R.string.yes)){ _, _ ->
                 App.db.taskDao().delete(position)
                 findNavController().navigate(R.id.navigation_home)
             }
-            .setNegativeButton("Cancel"){ dialog, _ ->
+            .setNegativeButton(getString(R.string.cancel)){ dialog, _ ->
                 dialog.dismiss()
             }
 
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
         return true
+    }
+
+    private fun onUpdateClick(task: Task):Boolean{
+        val bundle = Bundle()
+        bundle.putSerializable(TASK_UPDATE, task)
+        findNavController().navigate(R.id.taskFragment, bundle)
+        return true
+    }
+
+    companion object{
+        const val TASK_UPDATE = "task.update"
     }
 
     override fun onDestroyView() {

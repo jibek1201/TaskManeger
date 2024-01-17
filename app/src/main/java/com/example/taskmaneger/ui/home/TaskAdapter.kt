@@ -7,7 +7,8 @@ import com.example.taskmaneger.databinding.ItemTaskBinding
 import com.example.taskmaneger.model.Task
 
 class TaskAdapter(
-    private val onLongClick:(position:Task)->Boolean
+    private val onLongClick:(position:Task)->Boolean,
+    private val onUpdateClick:(task:Task)->Boolean
 ): RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     private val list = arrayListOf<Task>()
     fun addTasks(tasks: List<Task>) {
@@ -41,6 +42,7 @@ class TaskAdapter(
             tvTitle.text = task.title
             tvDesc.text = task.desc
             itemView.setOnLongClickListener{onLongClick(task)}
+            itemView.setOnClickListener{onUpdateClick(task)}
         }
     }
 }

@@ -5,7 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.taskmaneger.App.Companion.db
+import com.example.taskmaneger.R
 import com.example.taskmaneger.databinding.FragmentDashboardBinding
+import com.example.taskmaneger.model.Film
+import com.example.taskmaneger.utils.showToast
+import com.google.firebase.auth.FirebaseAuth
 
 class DashboardFragment : Fragment() {
 
@@ -28,5 +33,21 @@ class DashboardFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnSave.setOnClickListener {
+            val data = Film(binding.etDas.text.toString(), binding.etDask.text.toString())
+//            FirebaseAuth.getInstance().currentUser?.uid?.let { it1 ->
+//                db.collection(it1)
+//                    .add(data)
+//                    .addOnSuccessListener {
+//                        showToast(getString(R.string.success_msg))
+//                    }
+//                    .addOnFailureListener {
+//                        showToast(it.message.toString())
+//                    }
+//            }
+        }
     }
 }
